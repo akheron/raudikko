@@ -30,6 +30,11 @@ All core FST components have been ported from Java:
 - ✅ `MyInputStream` - Binary data reader (from utils)
 
 **Status**: All files ported, code compiles cleanly, basic test structure in place.
+
+**Testing Status**: 0 of 9 Java FST unit tests (`UnweightedTransducerTest.java`) have been ported yet.
+Tests require Phase 2 components: `SymbolBuffer` for output processing and morphology data loading.
+Only 1 smoke test (`test_fst_module_compiles`) currently passes to verify compilation.
+
 The FST implementation is ready for integration with the morphology analysis engine.
 
 ## 🚧 Core Implementation (Critical)
@@ -100,7 +105,10 @@ Port utility code:
 **Location**: `tests/` and inline module tests
 
 Port existing tests:
-- FST tests (`UnweightedTransducerTest.java`)
+- FST tests (`UnweightedTransducerTest.java`) - **Blocked**: Requires `SymbolBuffer` and morphology data loading
+  - 9 tests total: baseForm, baseFormForCompoundWord1/2, baseFormForNounDerivedFromVerb,
+    baseFormForNumeral, baseFormForOrdinal, baseFormForWordHavingNoInflections,
+    baseFormForCompoundProperNoun, baseFormForCapitalizedWord
 - Morphology parser tests:
   - `FinnishVfstAnalyzerTest.java`
   - `BaseFormParserTest.java`
