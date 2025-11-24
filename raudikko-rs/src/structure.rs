@@ -27,6 +27,11 @@ impl Structure {
         Ok(Self { symbols })
     }
 
+    /// Create a new structure from symbols (internal use, assumes symbols is not empty)
+    pub(crate) fn from_symbols(symbols: Vec<StructureSymbol>) -> Self {
+        Self { symbols }
+    }
+
     /// Get the number of morphemes in this structure
     pub fn morpheme_count(&self) -> usize {
         self.symbols

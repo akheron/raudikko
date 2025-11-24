@@ -21,6 +21,8 @@
 mod symbol_buffer;
 mod tagged_value_lookup_table;
 mod tags;
+pub(crate) mod validator;
+pub(crate) mod structure_parser;
 
 pub(crate) use symbol_buffer::SymbolBuffer;
 pub(crate) use tagged_value_lookup_table::TaggedValueLookupTable;
