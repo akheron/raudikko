@@ -37,6 +37,21 @@ Only 1 smoke test (`test_fst_module_compiles`) currently passes to verify compil
 
 The FST implementation is ready for integration with the morphology analysis engine.
 
+## 🚧 In Progress (Phase 2 - Started)
+
+### Phase 2.1: Core Morphology Infrastructure ✅
+
+**Location**: `src/internal/morphology/` and `src/internal/utils/`
+
+Initial morphology components have been ported:
+- ✅ `Tags` - Morphology tag constants (boundaries, classes, parameters)
+- ✅ `TaggedValueLookupTable` - Generic lookup table for FST symbol to enum mapping
+- ✅ `SymbolBuffer` - Buffer for processing FST output symbols with navigation and query methods
+- ✅ `string_utils` - String manipulation utilities (capitalize, case checking, character operations)
+- ✅ `StructureSymbol::for_code()` - Convenience method for structure symbol parsing
+
+**Status**: Core infrastructure complete, all tests passing. SymbolBuffer unblocks FST testing and parser implementation.
+
 ## 🚧 Core Implementation (Critical)
 
 ### 2. Morphological Analysis Engine
