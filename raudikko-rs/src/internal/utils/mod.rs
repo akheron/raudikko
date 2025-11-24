@@ -32,6 +32,7 @@
 
 mod char_map;
 mod my_input_stream;
+pub mod string_utils;
 
 pub(crate) use char_map::CharMap;
 pub(crate) use my_input_stream::MyInputStream;

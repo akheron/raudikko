@@ -130,6 +130,13 @@ impl StructureSymbol {
         }
     }
 
+    /// Create a symbol from its character code (panics on invalid code)
+    ///
+    /// This is a convenience method for cases where the code is expected to be valid.
+    pub fn for_code(c: char) -> Self {
+        Self::from_code(c).unwrap_or_else(|_| panic!("Invalid structure code: {}", c))
+    }
+
     /// Convert a character according to this symbol's case
     pub fn convert(&self, ch: char) -> char {
         match self {
