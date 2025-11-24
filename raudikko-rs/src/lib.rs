@@ -34,6 +34,8 @@ pub mod morphology;
 pub mod structure;
 pub mod word;
 
+mod internal;
+
 // Re-export main types at crate root
 pub use analysis::Analysis;
 pub use analyzer::Analyzer;

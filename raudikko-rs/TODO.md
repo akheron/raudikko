@@ -13,28 +13,26 @@ This document outlines the work needed to complete the Rust port of Raudikko.
 - [x] Basic documentation
 - [x] Project compiles cleanly
 
+## ✅ Completed (Phase 1)
+
+### 1. Finite State Transducer (FST) ✅
+
+**Location**: `src/internal/fst/` ✅
+
+All core FST components have been ported from Java:
+- ✅ `UnweightedTransducer` - Core FST data structure and operations
+- ✅ `UnweightedVfstLoader` - Loading `.vfst` files
+- ✅ `State`, `CharTransition`, `DiacriticTransition` - State and transition types
+- ✅ `Symbol`, `Diacritic`, `SymbolOrDiacritic` - Symbol types with tag parsing
+- ✅ `TransducerOperation` - FST operation enum (P, C, U, R, D)
+- ✅ `SymbolMap` - Symbol lookup and management
+- ✅ `CharMap` - Character to symbol mapping (from utils)
+- ✅ `MyInputStream` - Binary data reader (from utils)
+
+**Status**: All files ported, code compiles cleanly, basic test structure in place.
+The FST implementation is ready for integration with the morphology analysis engine.
+
 ## 🚧 Core Implementation (Critical)
-
-### 1. Finite State Transducer (FST)
-
-**Location**: New module `src/internal/fst/`
-
-Port the following from Java:
-- `UnweightedTransducer` - Core FST data structure and operations
-- `UnweightedVfstLoader` - Loading `.vfst` files
-- `State`, `Transition`, `Symbol` types
-- `TransducerOperation` - FST traversal and matching logic
-- `SymbolMap` - Symbol lookup and management
-
-**Files to port**:
-- `internal/fst/UnweightedTransducer.java`
-- `internal/fst/UnweightedVfstLoader.java`
-- `internal/fst/State.java`
-- `internal/fst/CharTransition.java`
-- `internal/fst/DiacriticTransition.java`
-- `internal/fst/Symbol.java`
-- `internal/fst/SymbolMap.java`
-- `internal/fst/TransducerOperation.java`
 
 ### 2. Morphological Analysis Engine
 
