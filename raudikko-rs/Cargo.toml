@@ -1,0 +1,21 @@
+[package]
+name = "raudikko"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.70"
+authors = ["Evident Solutions Oy"]
+description = "Morphological analysis for Finnish language"
+license = "GPL-3.0-or-later OR MPL-2.0"
+repository = "https://github.com/evidentsolutions/raudikko"
+keywords = ["finnish", "nlp", "morphology", "linguistics"]
+categories = ["text-processing", "parsing"]
+
+[dependencies]
+thiserror = "1.0"
+
+[dev-dependencies]
+criterion = "0.5"
+
+# [[bench]]
+# name = "analyzer_bench"
+# harness = false
